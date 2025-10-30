@@ -1,0 +1,70 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp4p2db0e3nt"]
+
+[ext_resource type="Texture2D" uid="uid://ca1g0dwbw6wex" path="res://assets/Ramo.png" id="1_03y33"]
+[ext_resource type="Script" path="res://scripts/BranchClick.cs" id="1_tkbgl"]
+[ext_resource type="Texture2D" uid="uid://dnks66vj2s6mr" path="res://assets/Ramo outline.png" id="2_c4tj6"]
+[ext_resource type="PackedScene" uid="uid://ioo7x2kk2bmp" path="res://scene/position_2d.tscn" id="4_ha8uj"]
+[ext_resource type="AudioStream" uid="uid://b0jef5c7rbppl" path="res://assets/sounds/flyingSounds/Bird_flying_away.wav" id="5_mybre"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug7on"]
+atlas = ExtResource("1_03y33")
+region = Rect2(0, 170, 350, 170)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6f5vc"]
+atlas = ExtResource("2_c4tj6")
+region = Rect2(0, 170, 350, 170)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s1on3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug7on")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6f5vc")
+}],
+"loop": true,
+"name": &"selected",
+"speed": 5.0
+}]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_57ek0"]
+points = PackedVector2Array(-167, -12, 180, 7, 180, 61)
+
+[node name="branchR" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_tkbgl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_s1on3")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("ConvexPolygonShape2D_57ek0")
+one_way_collision_margin = 0.0
+
+[node name="Position_slot" parent="Area2D" instance=ExtResource("4_ha8uj")]
+position = Vector2(81, -37)
+
+[node name="Position_slot2" parent="Area2D" instance=ExtResource("4_ha8uj")]
+z_index = 1
+position = Vector2(-4, -37)
+
+[node name="Position_slot3" parent="Area2D" instance=ExtResource("4_ha8uj")]
+z_index = 1
+position = Vector2(-89, -37)
+
+[node name="AudioStreamFlyAway2D" type="AudioStreamPlayer2D" parent="Area2D"]
+stream = ExtResource("5_mybre")
+volume_db = 10.0
+bus = &"SFX"
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_OnInputEvent"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_OnMouseEntered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_OnMouseExited"]

@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=3 uid="uid://byijla4nv0ani"]
+
+[ext_resource type="Script" path="res://scene/PauseMenu.cs" id="1_v3lvr"]
+[ext_resource type="FontFile" uid="uid://b5aj5sfkijybl" path="res://assets/font/Pixellari.ttf" id="2_8d4yd"]
+[ext_resource type="Theme" uid="uid://dkf72b0bb6efm" path="res://assets/default_theme.tres" id="2_m57gs"]
+[ext_resource type="AudioStream" uid="uid://d4f6jhltjuxy4" path="res://assets/sounds/buttonSounds/ClickSound.wav" id="4_gu120"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpf8c"]
+content_margin_left = 75.0
+content_margin_top = 100.0
+content_margin_right = 75.0
+bg_color = Color(0, 0, 0, 0.529412)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5v2gt"]
+content_margin_top = 0.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0ig6"]
+content_margin_top = 15.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrwet"]
+content_margin_top = 15.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v3lvr")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -261.5
+offset_top = -330.0
+offset_right = 261.5
+offset_bottom = 330.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 46
+alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Riprendi" type="Button" parent="PanelContainer/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = -163.5
+offset_top = -188.0
+offset_right = 146.5
+offset_bottom = -88.0
+theme = ExtResource("2_m57gs")
+theme_override_fonts/font = ExtResource("2_8d4yd")
+theme_override_font_sizes/font_size = 60
+text = "Riprendi"
+
+[node name="Volume" type="Button" parent="PanelContainer/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = -163.0
+offset_top = -44.0
+offset_right = 147.0
+offset_bottom = 56.0
+theme = ExtResource("2_m57gs")
+theme_override_fonts/font = ExtResource("2_8d4yd")
+theme_override_font_sizes/font_size = 60
+text = "Volume"
+
+[node name="Menu" type="Button" parent="PanelContainer/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = -163.0
+offset_top = 100.0
+offset_right = 147.0
+offset_bottom = 200.0
+theme = ExtResource("2_m57gs")
+theme_override_fonts/font = ExtResource("2_8d4yd")
+theme_override_font_sizes/font_size = 60
+text = "Indietro"
+
+[node name="VolumeMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -263.0
+offset_top = -329.0
+offset_right = 262.0
+offset_bottom = 331.0
+
+[node name="PanelContainerVolume" type="PanelContainer" parent="VolumeMenu"]
+layout_mode = 2
+offset_left = 2.0
+offset_right = 525.0
+offset_bottom = 660.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mpf8c")
+
+[node name="VolumeBox" type="VBoxContainer" parent="VolumeMenu/PanelContainerVolume"]
+layout_mode = 2
+
+[node name="Master_label" type="Label" parent="VolumeMenu/PanelContainerVolume/VolumeBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8d4yd")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_5v2gt")
+text = "MASTER"
+horizontal_alignment = 1
+
+[node name="Master" type="HSlider" parent="VolumeMenu/PanelContainerVolume/VolumeBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Sound_Effects_label" type="Label" parent="VolumeMenu/PanelContainerVolume/VolumeBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8d4yd")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0ig6")
+text = "SOUND EFFECTS"
+horizontal_alignment = 1
+
+[node name="Sound_Effects" type="HSlider" parent="VolumeMenu/PanelContainerVolume/VolumeBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Music_label" type="Label" parent="VolumeMenu/PanelContainerVolume/VolumeBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8d4yd")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_wrwet")
+text = "MUSIC"
+horizontal_alignment = 1
+
+[node name="Music" type="HSlider" parent="VolumeMenu/PanelContainerVolume/VolumeBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="OK" type="Button" parent="VolumeMenu"]
+layout_mode = 2
+offset_left = 145.0
+offset_top = 486.0
+offset_right = 381.0
+offset_bottom = 595.0
+theme = ExtResource("2_m57gs")
+theme_override_font_sizes/font_size = 40
+text = "OK"
+
+[node name="ButtonStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_gu120")
+bus = &"SFX"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Control/Riprendi" to="." method="_OnRiprendiPressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Control/Volume" to="." method="_OnVolumePressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Control/Menu" to="." method="_OnEsciPressed"]
+[connection signal="value_changed" from="VolumeMenu/PanelContainerVolume/VolumeBox/Master" to="." method="_OnMasterSliderChanged"]
+[connection signal="value_changed" from="VolumeMenu/PanelContainerVolume/VolumeBox/Sound_Effects" to="." method="_OnSoundEffectsSliderChanged"]
+[connection signal="value_changed" from="VolumeMenu/PanelContainerVolume/VolumeBox/Music" to="." method="_OnMusicSliderChanged"]
+[connection signal="pressed" from="VolumeMenu/OK" to="." method="_OnOkPressed"]

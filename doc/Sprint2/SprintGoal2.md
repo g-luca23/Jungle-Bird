@@ -1,0 +1,2 @@
+# Sprint Goal 2
+In this sprint, we aim to build the first playable version of the game by implementing core gameplay mechanics. This includes enabling players to select and move birds between branches, ensuring branches have limited space, and allowing grouped birds to fly away once sorted. Additionally, we will enhance the player experience by adding bird animations (idle and flight) and a visual-auditory feedback system for interactions. This progress will deliver the essential gameplay loop while improving the visual and interactive elements of the game.

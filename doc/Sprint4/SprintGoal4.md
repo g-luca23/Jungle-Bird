@@ -1,0 +1,3 @@
+# Sprint Goal 4
+
+We aim to make this one our last sprint. During these two weeks we plan to recuperate our technical debt and finish all remaining User Stories. The main game infrastructure is finished, what remains are details and the optimal move suggestion. We plan to achieve this in this sprint, focusing half the team mainly on the optimal move suggestion, while the rest of the team will finish all of the other smaller stories. All of these together will make up our finished product.

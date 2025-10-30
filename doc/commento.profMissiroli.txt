@@ -1,0 +1,13 @@
+COmmento allo S0 (aggiornato)
+
+README:Aggiungere i dati del team, ruoli inclusi
+SCRUMBLE : OK
+DIAGRAMMI: nessuno
+TAIGA: OK
+	Us: la mia impressione è che siano un po' poche, ma potrei sbagliarmi. Di sicuro non sono stimate, e questo non va bene. Forse neppure priorizzate.
+	Inoltre la descrizione è un po' vaga il che porta a US imprecise e non atomiche. Provate a usare
+	la forma canonica delle US, stimate e dovrebbe migliorare.
+	Manca inoltre lo Sprint Backlog dello S1
+CODICE: scheletro (OK)
+Git: protected branch
+

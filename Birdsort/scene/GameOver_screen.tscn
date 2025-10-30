@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://cm224qhfe300i"]
+
+[ext_resource type="Script" path="res://scene/GameOverScreen.cs" id="1_h2fyf"]
+[ext_resource type="Theme" uid="uid://dkf72b0bb6efm" path="res://assets/default_theme.tres" id="1_jhapy"]
+[ext_resource type="FontFile" uid="uid://b5aj5sfkijybl" path="res://assets/font/Pixellari.ttf" id="2_5hb0p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jwbq2"]
+
+[node name="GameOver_screen" type="Control"]
+process_mode = 2
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h2fyf")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -261.5
+offset_top = 210.0
+offset_right = 230.5
+offset_bottom = 870.0
+grow_horizontal = 2
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 72.0
+offset_right = 474.0
+offset_bottom = 256.0
+theme_override_fonts/normal_font = ExtResource("2_5hb0p")
+theme_override_font_sizes/normal_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_jwbq2")
+text = "Game Over
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 46
+alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Esci" type="Button" parent="PanelContainer/VBoxContainer/Control"]
+layout_mode = 2
+offset_left = -163.0
+offset_right = 147.0
+offset_bottom = 100.0
+theme = ExtResource("1_jhapy")
+theme_override_fonts/font = ExtResource("2_5hb0p")
+theme_override_font_sizes/font_size = 60
+text = "Esci"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Control/Esci" to="." method="_on_esci_pressed"]

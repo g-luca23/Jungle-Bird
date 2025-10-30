@@ -1,0 +1,2 @@
+# Sprint Goal 1
+In this sprint, we aim to lay the foundations of the project by implementing the core components of the app. These include the main views, such as the Main menu, Pause menu and level view, the backend structures for the birds and the branches and the main graphical views. This foundational setup will allow us to move forward confidently with feature development in subsequent sprints.

@@ -1,0 +1,3 @@
+# Sprint Goal 3
+
+In this sprint we aim to recuperate the existing technical debt from the previous sprint, while also implementing some newly established features to the game. These feature include a level counter and special birds to make the level creation more creative and diverse. These changes, coupled with the features from the last sprint, will make up a well established version of the game, leaving only the more advanced features to be done in a future sprint.

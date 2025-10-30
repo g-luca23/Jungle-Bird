@@ -1,0 +1,6 @@
+projectKey=Gruppo_9_SWE
+serverUrl=https://aminsep.disi.unibo.it/sonarqube
+serverVersion=10.2.1.78527
+dashboardUrl=https://aminsep.disi.unibo.it/sonarqube/dashboard?id=Gruppo_9_SWE
+ceTaskId=AZNQZhn1hdzXFn4K_hhf
+ceTaskUrl=https://aminsep.disi.unibo.it/sonarqube/api/ce/task?id=AZNQZhn1hdzXFn4K_hhf

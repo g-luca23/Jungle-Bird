@@ -1,0 +1,15 @@
+﻿/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scene/Gioco.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scene/MainMenu.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scene/PauseMenu.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scene/WinScreen.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/BirdClick.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/Bomba.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/BranchClick.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/Core.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/GodotInterface.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/Level.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/logicInterface/devUtils.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/logicInterface/LogicInterface.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/logicInterface/logicOptimization.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/logicInterface/logicSolver.cs
+/home/erik/Desktop/Uni_Projects/jungle-bird/Birdsort/scripts/SaveSystem.cs

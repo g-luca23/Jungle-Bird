@@ -1,0 +1,174 @@
+[gd_scene load_steps=9 format=3 uid="uid://dce7mdvpa33op"]
+
+[ext_resource type="FontFile" uid="uid://b5aj5sfkijybl" path="res://assets/font/Pixellari.ttf" id="1_0cpcp"]
+[ext_resource type="Script" path="res://scene/WinScreen.cs" id="1_r5rin"]
+[ext_resource type="Theme" uid="uid://dkf72b0bb6efm" path="res://assets/default_theme.tres" id="3_a8lxw"]
+[ext_resource type="Texture2D" uid="uid://glk6p0fjbkdn" path="res://assets/Bottoni/Bottoni e schermate.png" id="3_tvuao"]
+[ext_resource type="Texture2D" uid="uid://oadvia7hnywd" path="res://assets/Bottoni/share.png" id="5_gxawt"]
+[ext_resource type="Texture2D" uid="uid://deimesei36w44" path="res://assets/Bottoni/Instagram_icon.png" id="6_u3yd6"]
+[ext_resource type="Texture2D" uid="uid://dt4rgp81kc6yy" path="res://assets/Bottoni/icons8-telegram-240.png" id="7_0bg18"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rph8"]
+content_margin_left = 45.0
+content_margin_top = 63.0
+texture = ExtResource("3_tvuao")
+region_rect = Rect2(12, 18, 122, 44)
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5rin")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -473.0
+offset_right = 246.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/Control"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 72.0
+offset_right = 474.0
+offset_bottom = 256.0
+theme_override_fonts/normal_font = ExtResource("1_0cpcp")
+theme_override_font_sizes/normal_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxTexture_0rph8")
+text = "HAI VINTO!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ButtonControl" type="Control" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Menu" type="Button" parent="PanelContainer/VBoxContainer/ButtonControl"]
+layout_mode = 2
+offset_left = 30.0
+offset_top = -83.0
+offset_right = 461.0
+offset_bottom = 12.0
+theme = ExtResource("3_a8lxw")
+theme_override_fonts/font = ExtResource("1_0cpcp")
+theme_override_font_sizes/font_size = 50
+text = "Torna al menu"
+
+[node name="Next" type="Button" parent="PanelContainer/VBoxContainer/ButtonControl"]
+layout_mode = 2
+offset_left = 33.0
+offset_top = 49.0
+offset_right = 465.0
+offset_bottom = 142.0
+theme = ExtResource("3_a8lxw")
+theme_override_fonts/font = ExtResource("1_0cpcp")
+theme_override_font_sizes/font_size = 50
+text = "Prossimo livello"
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer/VBoxContainer/ButtonControl"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 291.0
+offset_right = 478.0
+offset_bottom = 366.0
+texture_normal = ExtResource("5_gxawt")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PointsLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer/ButtonControl"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 186.0
+offset_right = 430.0
+offset_bottom = 264.0
+theme_override_fonts/normal_font = ExtResource("1_0cpcp")
+theme_override_font_sizes/normal_font_size = 50
+text = "PUNTI: "
+
+[node name="VictoryControl" type="Control" parent="PanelContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="LivelloCompletato" type="RichTextLabel" parent="PanelContainer/VBoxContainer/VictoryControl"]
+layout_mode = 2
+offset_top = -58.0
+offset_right = 492.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("1_0cpcp")
+theme_override_font_sizes/normal_font_size = 60
+text = "LIVELLO: XX"
+
+[node name="Punteggio" type="RichTextLabel" parent="PanelContainer/VBoxContainer/VictoryControl"]
+layout_mode = 2
+offset_top = 40.0
+offset_right = 492.0
+offset_bottom = 109.0
+theme_override_fonts/normal_font = ExtResource("1_0cpcp")
+theme_override_font_sizes/normal_font_size = 50
+text = "PUNTEGGIO: XXX"
+
+[node name="ShareControl" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = 322.0
+offset_right = 105.0
+offset_bottom = 362.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ShareControl"]
+layout_mode = 0
+offset_left = -44.0
+offset_top = -13.0
+offset_right = 245.0
+offset_bottom = 101.0
+
+[node name="Control" type="Control" parent="ShareControl/PanelContainer"]
+layout_mode = 2
+
+[node name="InstagramButton" type="TextureButton" parent="ShareControl/PanelContainer/Control"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 18.0
+offset_right = 241.0
+offset_bottom = 88.0
+texture_normal = ExtResource("6_u3yd6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TelegramButton" type="TextureButton" parent="ShareControl/PanelContainer/Control"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 14.0
+offset_right = 128.0
+offset_bottom = 92.0
+texture_normal = ExtResource("7_0bg18")
+ignore_texture_size = true
+stretch_mode = 5
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonControl/Menu" to="." method="_OnMenuPressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonControl/Next" to="." method="_OnNextPressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ButtonControl/TextureButton" to="." method="_OnSharePressed"]
+[connection signal="pressed" from="ShareControl/PanelContainer/Control/InstagramButton" to="." method="_OnInstagramPressed"]
+[connection signal="pressed" from="ShareControl/PanelContainer/Control/TelegramButton" to="." method="_OnTelegramPressed"]

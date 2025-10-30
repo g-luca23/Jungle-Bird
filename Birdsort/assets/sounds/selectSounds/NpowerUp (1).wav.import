@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bgiqkxnajfnmc"
+path="res://.godot/imported/NpowerUp (1).wav-cd6f081d5088f0b690d6749324f4a632.sample"
+
+[deps]
+
+source_file="res://assets/sounds/selectSounds/NpowerUp (1).wav"
+dest_files=["res://.godot/imported/NpowerUp (1).wav-cd6f081d5088f0b690d6749324f4a632.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

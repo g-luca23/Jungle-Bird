@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://dwvnjn34bv3d6"]
+
+[ext_resource type="Script" path="res://scene/Gioco.cs" id="1_oxurp"]
+[ext_resource type="Texture2D" uid="uid://dunqxj121tov7" path="res://assets/1719894.jpg" id="3_bg3sd"]
+[ext_resource type="PackedScene" uid="uid://b31dq75xwge1l" path="res://scene/bombcounter.tscn" id="4_7y1fd"]
+[ext_resource type="Texture2D" uid="uid://racekws7i3mw" path="res://assets/hintIMG.webp" id="4_mk4fd"]
+[ext_resource type="AudioStream" uid="uid://chtpc0ocs7l5p" path="res://assets/sounds/musics/GameMusic.wav" id="4_v6goj"]
+[ext_resource type="Texture2D" uid="uid://db8hpg5khxof" path="res://assets/texture/ninepatch.png" id="5_ar4oj"]
+[ext_resource type="Texture2D" uid="uid://ceodmq1sorqv5" path="res://assets/pause_button.png" id="9_dev3d"]
+
+[sub_resource type="TileSet" id="TileSet_oindv"]
+
+[node name="Game" type="Node2D"]
+position = Vector2(-1, 0)
+script = ExtResource("1_oxurp")
+
+[node name="TileMap" type="TileMap" parent="."]
+visibility_layer = 7
+position = Vector2(1, 0)
+tile_set = SubResource("TileSet_oindv")
+format = 2
+layer_0/name = "rami"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -4)
+rotation = -1.5708
+offset = Vector2(2, 0)
+zoom = Vector2(0.833, 0.82)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -431.0
+offset_top = -664.0
+offset_right = 433.0
+offset_bottom = 653.0
+texture = ExtResource("3_bg3sd")
+
+[node name="Pausa" type="TextureButton" parent="."]
+offset_left = -430.0
+offset_top = -662.0
+offset_right = -320.0
+offset_bottom = -552.0
+texture_normal = ExtResource("9_dev3d")
+
+[node name="Button" type="Button" parent="Pausa"]
+z_index = 18
+layout_mode = 0
+offset_left = 128.0
+offset_top = 14.0
+offset_right = 553.0
+offset_bottom = 439.0
+scale = Vector2(0.2, 0.2)
+icon = ExtResource("4_mk4fd")
+
+[node name="TextureButton" type="TextureButton" parent="Pausa"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 7.0
+offset_right = 219.0
+offset_bottom = 103.0
+texture_normal = ExtResource("5_ar4oj")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Bomba" parent="." instance=ExtResource("4_7y1fd")]
+z_index = -1
+position = Vector2(0, -609)
+
+[node name="GameMusicStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_v6goj")
+bus = &"Music"
+
+[connection signal="pressed" from="Pausa" to="." method="_OnPausaPressed"]
+[connection signal="pressed" from="Pausa/TextureButton" to="." method="_onHintbuttonPressed"]
+[connection signal="finished" from="GameMusicStreamPlayer2D" to="." method="_StartMusic"]
